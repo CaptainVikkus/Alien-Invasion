@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourcePool : MonoBehaviour
 {
     private static float resource = 10;
-    public Text resourceDisplay;
+    public TextMeshProUGUI resourceDisplay;
 
     // Start is called before the first frame update
     void Start()
