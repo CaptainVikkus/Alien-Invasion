@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     private Spawner spawner;
     public int currentWave = 1;
     public int maxWave = 12;
+    static public int currEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +44,30 @@ public class GameController : MonoBehaviour
         //Check Health - Lose Condition
         if (portHealth.health <= 0)
         {
-            SceneManager.LoadScene("LevelLost");
-            Debug.Log("Switching to " + "LevelLost");
+            Lose();
         }
         //Check Wave - Win Condition
+        if (currEnemies == 0)
+        {
+            currentWave++;
+            spawner.maxSpawn += currentWave * 2;
+            spawner.ResetSpawnCount();
+
+            if (currentWave > maxWave)
+            {
+                Win();
+            }
+        }
+    }
+
+    private void Lose()
+    {
+        SceneManager.LoadScene("LevelLost");
+        Debug.Log("Switching to " + "LevelLost");
+    }
+    private void Win()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Debug.Log("Switching to " + "MainMenu");
     }
 }
