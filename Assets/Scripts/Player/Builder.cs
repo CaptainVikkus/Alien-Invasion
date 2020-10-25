@@ -14,6 +14,7 @@ public enum Turret
 public class Builder : MonoBehaviour
 {
     private bool clicked;
+    private int cost = 0;
     private GameObject current;
     public GameObject basic;
     public GameObject advanced;
@@ -92,29 +93,35 @@ public class Builder : MonoBehaviour
         {
             case Turret.Basic:
                 current = basic;
+                cost = 5;
                 break;
             case Turret.Advanced:
                 current = advanced;
+                cost = 10;
                 break;
             case Turret.Rocket:
                 current = rocket;
+                cost = 10;
                 break;
             case Turret.Laser:
                 current = laser;
+                cost = 15;
                 break;
             case Turret.Factory:
                 current = factory;
+                cost = 5;
                 break;
 
             default:
                 current = basic;
+                cost = 5;
                 break;
         }
     }
 
     private void buildTurret(Vector3 position)
     { 
-        if (ResourcePool.SpendResources(0))
+        if (ResourcePool.SpendResources(cost))
         {
             Instantiate(current, position, transform.rotation);
         }
