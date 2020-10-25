@@ -9,18 +9,13 @@ public enum State
     Build = 2
 }
 
-public class TouchState : MonoBehaviour
+//State machine for handling different touch types
+public class TouchState
 {
-    public State state;
+    static public State state;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        state = State.Fire;
-    }
-
-    public void SetFire() { state = State.Fire; }
-    public void SetBuild() { state = State.Build; }
-    public void SetNone() { state = State.None; }
+    static public void SetFire() { state = State.Fire; }
+    static public void SetBuild() { state = State.Build; }
+    static public void SetNone() { state = State.None; }
 
 }

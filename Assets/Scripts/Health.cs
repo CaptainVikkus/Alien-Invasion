@@ -5,19 +5,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health;
-    public string enemyTag = "enemy";
+    public string enemyTag = "Enemy";
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(int dmg)
     {
-        
-    }
+        health -= dmg;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetType() != this.GetType())
+        if (health <=0)
         {
-
+            Destroy(this.gameObject);
         }
     }
 }

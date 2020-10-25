@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 3598546511095826320}
   - component: {fileID: 3598546511095826321}
   - component: {fileID: 3598546511095826326}
+  - component: {fileID: 347616710527170911}
   - component: {fileID: 3598546511095826323}
+  - component: {fileID: 631325117477593337}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Factory
@@ -47,6 +49,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -58,6 +62,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -107,6 +112,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.7}
   m_EdgeRadius: 0
+--- !u!50 &347616710527170911
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598546511095826327}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &3598546511095826323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ddcaf92fcd6284baaed21f14648834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResourcePool: {fileID: 0}
   collectionRate: 10
   collectionWeight: 1
+--- !u!114 &631325117477593337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598546511095826327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7d53d867c7a4a43a86c6b43f839edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  enemyTag: Enemy

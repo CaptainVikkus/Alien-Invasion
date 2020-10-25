@@ -278,8 +278,10 @@ GameObject:
   m_Component:
   - component: {fileID: 104588360}
   - component: {fileID: 104588359}
+  - component: {fileID: 104588363}
+  - component: {fileID: 104588362}
   - component: {fileID: 104588361}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpacePort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,8 +365,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7d53d867c7a4a43a86c6b43f839edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  enemyTag: enemy
+  health: 10
+  enemyTag: Enemy
+--- !u!61 &104588362
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104588358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 2}
+    newSize: {x: 1.2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.77}
+  m_EdgeRadius: 0
+--- !u!50 &104588363
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104588358}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &137146470
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,10 +500,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2124994201235060822, guid: 8c800da76ad5fa24186febd108fa8f71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6709426036832296812, guid: 8c800da76ad5fa24186febd108fa8f71,
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709426036832296812, guid: 8c800da76ad5fa24186febd108fa8f71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6771869866685530687, guid: 8c800da76ad5fa24186febd108fa8f71,
         type: 3}
@@ -464,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 6771869866685530687, guid: 8c800da76ad5fa24186febd108fa8f71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0462989
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6771869866685530687, guid: 8c800da76ad5fa24186febd108fa8f71,
         type: 3}
@@ -834,7 +893,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
@@ -1499,7 +1558,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1771,7 +1830,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetNone
         m_Mode: 1
@@ -1834,8 +1893,8 @@ GameObject:
   - component: {fileID: 669519167}
   - component: {fileID: 669519166}
   - component: {fileID: 669519170}
-  - component: {fileID: 669519171}
   - component: {fileID: 669519172}
+  - component: {fileID: 669519171}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1939,10 +1998,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 669519165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942f496eb73b84f479fe6f1793806da7, type: 3}
+  m_Script: {fileID: 11500000, guid: fe3b769b03807724083c0b8f57797fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  healthUI: {fileID: 189719999}
+  spacePort: {fileID: 104588358}
+  waveUI: {fileID: 1076606419}
+  spawner: {fileID: 1788388120}
+  currentWave: 1
+  maxWave: 12
 --- !u!114 &669519171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,7 +2156,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
@@ -2695,7 +2759,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
@@ -2962,7 +3026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
@@ -3265,7 +3329,7 @@ PrefabInstance:
     - target: {fileID: 3598546511095826320, guid: 6901dccb23e090d438292cf760baea61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4301327
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 3598546511095826320, guid: 6901dccb23e090d438292cf760baea61,
         type: 3}
@@ -3321,6 +3385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Factory
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598546511095826327, guid: 6901dccb23e090d438292cf760baea61,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6901dccb23e090d438292cf760baea61, type: 3}
@@ -3442,7 +3511,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
@@ -3805,7 +3874,8 @@ GameObject:
   - component: {fileID: 1972940600}
   - component: {fileID: 1972940599}
   - component: {fileID: 1972940601}
-  m_Layer: 0
+  - component: {fileID: 1972940602}
+  m_Layer: 8
   m_Name: Background
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -3887,7 +3957,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3903,6 +3973,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.28, y: 4.93}
   m_EdgeRadius: 0
+--- !u!50 &1972940602
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972940598}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2091254675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,7 +4076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669519170}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
         m_MethodName: SetFire
         m_Mode: 1

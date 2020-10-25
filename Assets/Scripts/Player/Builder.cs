@@ -30,7 +30,7 @@ public class Builder : MonoBehaviour
         if (Input.touchCount > 0)
         {
             // check we are in build mode
-            if (gameObject.GetComponent<TouchState>().state == State.Build)
+            if (TouchState.state == State.Build)
             {
 
                 Touch tap = Input.GetTouch(0);
@@ -38,31 +38,45 @@ public class Builder : MonoBehaviour
                 if (tap.phase == TouchPhase.Began)
                 {
                     Vector3 position = Camera.main.ScreenToWorldPoint(tap.position);
-                    //make sure we are clicking not on a menu
-                    if (position.z < 0)
+                    //Check we are clicking on open space
+                    RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(position, Vector3.forward), 20.0f, LayerMask.NameToLayer("UI"));
+                    Debug.Log(hit.collider.gameObject.name);
+                    if (hit.collider != null)
                     {
-                        position.z = 0;
-                        //Build Turret at tap point
                         buildTurret(position);
                     }
+                    ////make sure we are clicking not on a menu
+                    //if (position.z < 0)
+                    //{
+                    //    position.z = 0;
+                    //    //Build Turret at tap point
+                    //    buildTurret(position);
+                    //}
                 }
             }
         }
+        //mouse touches
         else if (Input.GetMouseButtonDown(0) && !clicked)
         {
             clicked = true;
             // check we are in build mode
-            if (gameObject.GetComponent<TouchState>().state == State.Build)
+            if (TouchState.state == State.Build)
             {
                 Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Debug.Log(position);
-                //make sure we are clicking not on a menu
-                if (position.z > 0)
+                //Check we are clicking on open space
+                RaycastHit2D hit = Physics2D.GetRayIntersection(new Ray(position, Vector3.forward), 20.0f, LayerMask.NameToLayer("Background"));
+                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider != null)
                 {
-                    position.z = 0;
-                    //Build Turret at tap point
                     buildTurret(position);
                 }
+                ////make sure we are clicking not on a menu
+                //if (position.z < 0)
+                //{
+                //    position.z = 0;
+                //    //Build Turret at tap point
+                //    buildTurret(position);
+                //}
             }
         }
         if (Input.GetMouseButtonUp(0))
