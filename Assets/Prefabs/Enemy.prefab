@@ -156,6 +156,8 @@ MonoBehaviour:
   resourceDrop: 1
   damage: 1
   dmgTick: 2
+  dmgSound: {fileID: 8300000, guid: 0c5f0be6c2c559c4a90fad4187355170, type: 3}
+  atkSound: {fileID: 8300000, guid: 7bf72557511b78142baf6d12d93d99ae, type: 3}
 --- !u!114 &4174371203196514969
 MonoBehaviour:
   m_ObjectHideFlags: 0

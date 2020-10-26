@@ -1576,7 +1576,6 @@ MonoBehaviour:
   spacePort: {fileID: 104588358}
   waveUI: {fileID: 1076606419}
   spawnerController: {fileID: 1788388120}
-  currentWave: 1
   maxWave: 12
 --- !u!114 &669519171
 MonoBehaviour:
@@ -3328,6 +3327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 937470966832358614, guid: b26bdf84fd2604f419f831729ee990c5, type: 3}
+  enemyHard: {fileID: 0}
   spawnpoints:
   - {fileID: 912689056}
   - {fileID: 2121105083}
@@ -3337,6 +3337,7 @@ MonoBehaviour:
   - {fileID: 1717415261}
   - {fileID: 1354865406}
   - {fileID: 1308095337}
+  currentWave: 1
   spawnInterval: 2
   maxSpawn: 0
 --- !u!4 &1788388122

@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
+  fireSound: {fileID: 8300000, guid: ea439ac95931a83419c13c6108971fcf, type: 3}
+  dmgSound: {fileID: 8300000, guid: 7bf72557511b78142baf6d12d93d99ae, type: 3}
   autoFire: 0
   range: 10
   ammoType: 0

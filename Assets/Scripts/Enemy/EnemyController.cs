@@ -18,6 +18,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float dmgTick = 2.0f;
     private float dmgTickCounter = 0.0f;
+    [SerializeField]
+    private AudioClip dmgSound;
+    [SerializeField]
+    private AudioClip atkSound;
 
     private Rigidbody2D rb2D;
 
@@ -45,6 +49,7 @@ public class EnemyController : MonoBehaviour
             {
                 try
                 {
+                    AudioSource.PlayClipAtPoint(atkSound, transform.position);
                     hit.gameObject.GetComponent<Health>().Damage(damage);
                     Debug.Log(name + " damaged " + hit.gameObject.name + " for " + damage);
                 }
@@ -58,6 +63,7 @@ public class EnemyController : MonoBehaviour
         //Health
         if (GetComponent<Health>().health <= 0)
         {
+            AudioSource.PlayClipAtPoint(dmgSound, transform.position);
             Spawner.currEnemies--;   //track wave progress
             ResourcePool.AddResource(GetLoot()); //Add Loot
             Destroy(this.gameObject);

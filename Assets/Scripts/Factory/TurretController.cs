@@ -11,6 +11,11 @@ public class TurretController : MonoBehaviour
     private float fireRate = 1;
     private float cooldown = 0;
 
+    [SerializeField]
+    private AudioClip fireSound;
+    [SerializeField]
+    private AudioClip dmgSound;
+
     public bool autoFire = false;
     public float range = 10;
     public BulletType ammoType = BulletType.Basic;
@@ -47,6 +52,7 @@ public class TurretController : MonoBehaviour
         }
         if (GetComponent<Health>().health <= 0)
         {
+            AudioSource.PlayClipAtPoint(dmgSound, transform.position);
             player.turretList.Remove(this);
             Destroy(this.gameObject);
         }
@@ -78,6 +84,7 @@ public class TurretController : MonoBehaviour
             //SpawnBullet
             bulletFactory.getBullet(transform, ammoType);
             cooldown = 0;
+            AudioSource.PlayClipAtPoint(fireSound, transform.position);
         }
     }
 }
