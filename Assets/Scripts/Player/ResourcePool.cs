@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class ResourcePool : MonoBehaviour
 {
-    private static float resource = 10;
+    private static float resource;
     public TextMeshProUGUI resourceDisplay;
+    public float startingResource = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        resource = startingResource;
     }
 
     // Update is called once per frame

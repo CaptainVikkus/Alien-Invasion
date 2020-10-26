@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: autoFire
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4444692086250608336, guid: 8c800da76ad5fa24186febd108fa8f71,
+        type: 3}
+      propertyPath: fireRate
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6709426036832296812, guid: 8c800da76ad5fa24186febd108fa8f71,
         type: 3}
       propertyPath: m_Name

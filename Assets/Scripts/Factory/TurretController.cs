@@ -45,6 +45,11 @@ public class TurretController : MonoBehaviour
                 Fire(target);
             }
         }
+        if (GetComponent<Health>().health <= 0)
+        {
+            player.turretList.Remove(this);
+            Destroy(this.gameObject);
+        }
     }
 
     private Vector2 FindTarget()
@@ -72,6 +77,7 @@ public class TurretController : MonoBehaviour
             transform.up = (Vector3)target - transform.position;
             //SpawnBullet
             bulletFactory.getBullet(transform, ammoType);
+            cooldown = 0;
         }
     }
 }

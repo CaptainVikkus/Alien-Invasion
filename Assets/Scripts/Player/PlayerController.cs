@@ -143,4 +143,10 @@ public class PlayerController : MonoBehaviour
         }
         TouchState.SetNone();
     }
+
+    //To access via buttons
+    public void SetFire() { TouchState.state = State.Fire; }
+    public void SetBuild() { TouchState.state = State.Build; }
+    public void SetNone() { TouchState.state = State.None; }
+
 }

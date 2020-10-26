@@ -21,9 +21,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GameObject spawnerController;
     private Spawner spawner;
-    public int currentWave = 1;
     public int maxWave = 12;
-    static public int currEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +37,7 @@ public class GameController : MonoBehaviour
     {
         //Update UI
         healthUI.text = "Health: " + portHealth.health;
-        waveUI.text = "Wave: " + currentWave + "/" + maxWave;
+        waveUI.text = "Wave: " + spawner.currentWave + "/" + maxWave;
 
         //Check Health - Lose Condition
         if (portHealth.health <= 0)
@@ -47,16 +45,9 @@ public class GameController : MonoBehaviour
             Lose();
         }
         //Check Wave - Win Condition
-        if (currEnemies == 0)
+        if (spawner.currentWave > maxWave)
         {
-            currentWave++;
-            spawner.maxSpawn += currentWave * 2;
-            spawner.ResetSpawnCount();
-
-            if (currentWave > maxWave)
-            {
-                Win();
-            }
+            Win();
         }
     }
 

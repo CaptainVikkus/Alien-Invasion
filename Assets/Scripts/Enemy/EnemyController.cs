@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     public Vector3 targetPos = new Vector3(0, 0, 0);
 
     [SerializeField]
+    private int resourceDrop = 1;
+    [SerializeField]
     private int damage = 1;
     [SerializeField]
     private float dmgTick = 2.0f;
@@ -20,7 +22,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb2D;
 
     // start is called before the first frame update
-    void start()
+    void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         Assert.IsNotNull(rb2D, "RigidBody not found");
@@ -52,5 +54,15 @@ public class EnemyController : MonoBehaviour
             dmgTickCounter += Time.deltaTime; //add time to counter
         }
         else { transform.position = destination; } //move forward
+
+        //Health
+        if (GetComponent<Health>().health <= 0)
+        {
+            Spawner.currEnemies--;   //track wave progress
+            ResourcePool.AddResource(GetLoot()); //Add Loot
+            Destroy(this.gameObject);
+        }
     }
+
+    public int GetLoot() { return resourceDrop; }
 }

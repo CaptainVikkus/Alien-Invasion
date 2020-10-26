@@ -599,8 +599,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
         m_Arguments:
@@ -1402,8 +1402,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetNone
         m_Mode: 1
         m_Arguments:
@@ -1610,6 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceDisplay: {fileID: 686034884}
+  startingResource: 10
 --- !u!1 &676421798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,8 +1729,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
         m_Arguments:
@@ -2331,8 +2332,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
         m_Arguments:
@@ -2598,8 +2599,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
         m_Arguments:
@@ -3009,8 +3010,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetBuild
         m_Mode: 1
         m_Arguments:
@@ -3573,8 +3574,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TouchState, Assembly-CSharp
+      - m_Target: {fileID: 669519171}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetFire
         m_Mode: 1
         m_Arguments:
