@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int health;
-    public string enemyTag = "Enemy";
+    //public string enemyTag = "Enemy";
 
     public void Damage(int dmg)
     {
